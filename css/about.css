@@ -1,0 +1,19 @@
+.about {
+    padding:5rem 0;
+}
+.about .img {
+    max-width:15rem;
+}
+.about .text {
+    margin-bottom: 0;
+}
+@media screen and (min-width: 1024px) {
+    .about .list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .about .item {
+        width: 30%;
+    }
+}

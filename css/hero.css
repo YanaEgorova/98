@@ -1,0 +1,13 @@
+.hero__wrapper {
+  background-color: var(--first-brand-color);
+}
+.hero {
+  padding: 10rem 0;
+}
+.hero .img {
+  margin-bottom: 4rem;
+  max-width: 40rem;
+}
+@media screen and (min-width: 1024px) {
+  
+}

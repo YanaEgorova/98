@@ -1,0 +1,18 @@
+:root {
+  --main-bg-color: #fff;
+  --sub-bg-color: #000;
+  --sub-text-color: #fff;
+  --accent-color: red;
+  --checkbox-color: #10a1f2;
+
+  --main-text-color: #000;
+
+  --first-brand-color: #ff840f;
+  --second-brand-color: #333333;
+  --third-brand-color: #666666;
+
+  --main-font: 'Open Sans Condensed';
+  --title-font: 'Poppins';
+
+  font-size: 62.5%;
+}

@@ -1,0 +1,129 @@
+body.popup--active {
+  overflow: hidden;
+}
+.popup__overlay {
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 999999999;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+.popup--active .popup__overlay {
+  opacity: 1;
+  pointer-events: initial;
+  visibility: visible;
+}
+.popup {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  max-width: 120rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.popup-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 3rem 2rem;
+  background: rgba( 255, 255, 255, 0.85 );
+  backdrop-filter: blur( .4rem );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 1rem;
+  border: .1rem solid rgba( 255, 255, 255, 0.18 );
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  display: none;
+}
+.popup-content--active {
+  z-index: 99;
+  opacity: 1;
+  pointer-events: initial;
+  visibility: visible;
+  display: block;
+}
+.popup-content__btn {
+  width: 3rem;
+  height: 3rem;
+  position: relative;
+  background-image: url('../img/cancel.svg');
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.popup-content__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+.popup .sub-title {
+  font-size: 3rem;
+  margin-bottom: 0;
+}
+.popup .bold {
+  font-size: 2rem;
+}
+.popup .text {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  max-width: 100%;
+}
+.policy__subtitle {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-family: var(--title-font);
+  margin-bottom: 1rem;
+}
+.policy__link {
+  font-size: 1.4rem;
+  color: var(--accent-color);
+  position: relative;
+}
+.policy__link::after {
+  display: block;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0.1rem;
+  background-color: var(--accent-color);
+  transition: all 0.3s ease-in-out;
+}
+.policy__link:hover::after {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .popup .text,
+  .policy__link {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .popup__overlay {
+    padding: 5rem;
+  }
+  .popup-content {
+    padding: 5rem 5rem;
+  }
+  .popup .text,
+  .policy__link {
+    font-size: 1.8rem;
+  }
+}
