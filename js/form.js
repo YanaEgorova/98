@@ -19,6 +19,8 @@ const prevQuantityBtn = document.querySelector('.js_quantity_prev');
 const nextQuantityBtn = document.querySelector('.js_quantity_next');
 const defaultText = topPriceParagraph.textContent;
 
+const bottomQuantity = document.querySelector('.js_bottom-quantity');
+
 const amountOfProduct = 12;
 const additionalProductPrice = 5.95;
 
@@ -115,8 +117,10 @@ function changeQuantity(e) {
     // const quantity = Number(e.target.value);
     if(e.target) {
         quantity = Number(e.target.value);
+        bottomQuantity.textContent = Number(e.target.value);
     } else {
         quantity = Number(e);
+        bottomQuantity.textContent = Number(e);
     }
     enterMoreThanThereIs(quantity);
     setTopTitle(quantity);
