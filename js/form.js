@@ -1,5 +1,4 @@
-const saveParagraph = document.querySelector('.js_save');
-const originalParagraph = document.querySelector('.js_original');
+
 const topPriceParagraph = document.querySelector('.js_price');
 const topBlock = document.querySelector('.js_form__title-box');
 const headphonesBlock = document.querySelector('.js_total');
@@ -25,8 +24,6 @@ const amountOfProduct = 12;
 const additionalProductPrice = 5.95;
 
 // HIDE START
-saveParagraph.style.display = 'none';
-originalParagraph.style.display = 'none';
 errorMessage.style.display = 'none';
 topBlock.style.display = 'none';
 headphonesBlock.style.display = 'none';
@@ -207,21 +204,11 @@ function priceAmount(value) {
 function setTopTitle(quantity) {
     if(typeof quantityLabelOptions(quantity) === 'string' && quantity > 0) {
         topPriceParagraph.textContent = quantityLabelOptions(quantity);
-        saveParagraph.style.display = 'none';
-        originalParagraph.style.display = 'none';
     } else if(typeof quantityLabelOptions(quantity) === 'string') {
         topPriceParagraph.textContent = quantityLabelOptions(quantity);
-        saveParagraph.style.display = 'none';
-        originalParagraph.style.display = 'none';
     } else if(typeof quantityLabelOptions(quantity) === 'object') {
         const title = quantityLabelOptions(quantity).title;
-        const original = quantityLabelOptions(quantity).original;
-        const save = quantityLabelOptions(quantity).save;
-        saveParagraph.style.display = 'block';
-        originalParagraph.style.display = 'inline-block';
         topPriceParagraph.textContent = title;
-        saveParagraph.textContent = save;
-        originalParagraph.textContent = original;
     }
 }
 
@@ -305,8 +292,6 @@ function enterMoreThanThereIs(quantity) {
     if(quantity > amountOfProduct) {
         errorMessage.style.display = 'block';
         topPriceParagraph.textContent = defaultText;
-        saveParagraph.style.display = 'none';
-        originalParagraph.style.display = 'none';
     } else {
         errorMessage.style.display = 'none';
     }
